@@ -5,7 +5,9 @@ import { inflate } from "pako";
 // Both are handled here by checking the gzip magic bytes.
 function bytesToLottieJson(bytes: Uint8Array): any {
   const isGzip = bytes[0] === 0x1f && bytes[1] === 0x8b;
-  const jsonStr = isGzip ? inflate(bytes, { to: "string" }) : new TextDecoder().decode(bytes);
+  const jsonStr = isGzip
+    ? (inflate(bytes, { to: "string" } as any) as string)
+    : new TextDecoder().decode(bytes);
   return JSON.parse(jsonStr);
 }
 
