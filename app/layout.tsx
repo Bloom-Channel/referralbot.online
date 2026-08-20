@@ -2,9 +2,40 @@ import "./globals.css";
 import Sidebar from "@/components/sidebar";
 import SiteHeader from "@/components/site-header";
 
+const SITE_URL = "https://referralbot.online";
+const SITE_TITLE = "ReferHub — Share and Discover Referral Links";
+const SITE_DESCRIPTION =
+  "Find and share real referral links for crypto exchanges, shopping apps, web hosting, and more — with sourced dollar values, not guesses.";
+
 export const metadata = {
-  title: "ReferHub",
-  description: "Share and discover referral links",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_TITLE,
+    template: "%s | ReferHub",
+  },
+  description: SITE_DESCRIPTION,
+  keywords: [
+    "referral links",
+    "referral codes",
+    "crypto exchange referral",
+    "Binance referral",
+    "Coinbase referral",
+    "referral bonus",
+    "invite friends earn money",
+  ],
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    siteName: "ReferHub",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
 };
 
 const THEME_INIT_SCRIPT = `(function(){try{var t=localStorage.getItem('referhub_theme')||'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`;
