@@ -156,8 +156,15 @@ $$;
 -- ============================================================
 -- Avatar uploads (public bucket, matches the honor-system RLS above)
 -- ============================================================
-insert into storage.buckets (id, name, public)
-values ('avatars', 'avatars', true)
+insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+values (
+  'avatars', 'avatars', true, 15728640,
+  array[
+    'image/jpeg', 'image/png', 'image/webp', 'image/gif', 'image/svg+xml',
+    'video/mp4', 'video/webm', 'video/quicktime',
+    'application/json', 'application/gzip', 'application/x-gzip'
+  ]
+)
 on conflict (id) do nothing;
 
 create policy "avatars_public_read" on storage.objects for select using (bucket_id = 'avatars');

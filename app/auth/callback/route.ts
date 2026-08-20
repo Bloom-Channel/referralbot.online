@@ -15,11 +15,17 @@ export async function GET(request: Request) {
   // browser there silently ends the login and drops the user back on the home
   // page with no session. Use the host the proxy actually received. `origin`
   // stays as the local-dev fallback, where no forwarded headers are set.
+  //
+  // x-forwarded-host is attacker-influenceable in general (a header, not a
+  // TLS-verified value), so only trust it against a known allowlist rather
+  // than redirecting to whatever host shows up — otherwise this becomes an
+  // open redirect off the OAuth callback.
+  const ALLOWED_HOSTS = ["referralbot.online", "www.referralbot.online", "referralbot-online.onrender.com"];
   const forwardedHost = request.headers.get("x-forwarded-host");
   const forwardedProto = request.headers.get("x-forwarded-proto") ?? "https";
   const base =
     process.env.NEXT_PUBLIC_SITE_URL ||
-    (forwardedHost ? `${forwardedProto}://${forwardedHost}` : origin);
+    (forwardedHost && ALLOWED_HOSTS.includes(forwardedHost) ? `${forwardedProto}://${forwardedHost}` : origin);
 
   // /onboarding checks (client-side) whether this auth user already has
   // a linked profile — if so it sets local identity and forwards to
