@@ -76,6 +76,44 @@ a { color: var(--teal); }
   min-width: 0;
 }
 
+.site-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+}
+.site-footer-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.site-footer-copy {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+.site-footer-links {
+  display: flex;
+  gap: 1.2rem;
+}
+.site-footer-links a {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+.site-footer-links a:hover {
+  color: var(--text);
+}
+
+.about-post {
+  max-width: 640px;
+}
+.about-post p {
+  margin-bottom: 1rem;
+}
+
 .sidebar {
   flex-shrink: 0;
   width: 68px;

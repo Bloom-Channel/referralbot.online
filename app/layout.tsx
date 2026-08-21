@@ -1,6 +1,7 @@
 import "./globals.css";
 import Sidebar from "@/components/sidebar";
 import SiteHeader from "@/components/site-header";
+import SiteFooter from "@/components/site-footer";
 
 const SITE_URL = "https://referralbot.online";
 const SITE_TITLE = "ReferHub — Share and Discover Referral Links";
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="app-main-col">
             <SiteHeader />
             {children}
+            <SiteFooter />
           </div>
         </div>
       </body>
