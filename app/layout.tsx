@@ -1,3 +1,4 @@
+import type { Viewport } from "next";
 import "./globals.css";
 import Sidebar from "@/components/sidebar";
 import SiteHeader from "@/components/site-header";
@@ -37,6 +38,11 @@ export const metadata = {
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 const THEME_INIT_SCRIPT = `(function(){try{var t=localStorage.getItem('referhub_theme')||'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`;

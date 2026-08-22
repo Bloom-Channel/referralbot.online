@@ -1210,5 +1210,93 @@ button:disabled { opacity: 0.5; cursor: default; }
 }
 .comments p strong { color: var(--accent); font-family: 'Space Grotesk', sans-serif; }
 
+/* ============================================================
+   Mobile / small-screen responsiveness
+   ============================================================ */
+@media (max-width: 860px) {
+  main { padding: 1.5rem 1rem 3rem; }
+
+  .sidebar {
+    width: 56px;
+    padding: 0.9rem 0 1.2rem;
+    gap: 1.1rem;
+  }
+  .sidebar-logo { width: 34px; height: 34px; }
+  .sidebar-logo-mark { width: 28px; height: 28px; }
+  .sidebar-link { width: 34px; height: 34px; }
+
+  .site-header-inner {
+    padding: 0.8rem 1rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+  .site-header-actions {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: 100%;
+  }
+  .post-link-btn, .signin-btn, .account-pill {
+    height: 40px;
+    font-size: 0.78rem;
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+  .account-menu { right: auto; left: 0; }
+
+  .site-footer-inner {
+    padding: 1.2rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  /* Dashboard: collapse the 3-column grid to a single stacked column */
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: 2rem;
+  }
+  .dashboard-col-left,
+  .dashboard-col-right {
+    position: static;
+    top: auto;
+  }
+  .referral-stats-panel {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  .activity-feed-viewport {
+    height: 340px;
+  }
+
+  .trending-card { flex-basis: 170px; }
+
+  .featured-link-row {
+    flex-wrap: wrap;
+  }
+  .featured-link-row input:nth-of-type(1) {
+    flex: 1 1 100%;
+  }
+
+  .settings-side-decoration {
+    display: none;
+  }
+
+  .profile-header {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-header-actions .post-link-btn:nth-child(1) { order: 2; }
+  .site-header-actions .post-link-btn:nth-child(2) { order: 1; }
+  h1 { font-size: 1.6rem; }
+}
+
 .comment-form { margin-top: 0.6rem; }
 .comment-form input { font-size: 0.88rem; }
