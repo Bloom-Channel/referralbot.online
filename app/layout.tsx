@@ -5,7 +5,7 @@ import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 
 const SITE_URL = "https://referralbot.online";
-const SITE_TITLE = "ReferHub — Share and Discover Referral Links";
+const SITE_TITLE = "Referralbot.online — Share and Discover Referral Links";
 const SITE_DESCRIPTION =
   "Find and share real referral links for crypto exchanges, shopping apps, web hosting, and more — with sourced dollar values, not guesses.";
 
@@ -13,7 +13,7 @@ export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: SITE_TITLE,
-    template: "%s | ReferHub",
+    template: "%s | Referralbot.online",
   },
   description: SITE_DESCRIPTION,
   keywords: [
@@ -29,7 +29,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     url: SITE_URL,
-    siteName: "ReferHub",
+    siteName: "Referralbot.online",
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
   },

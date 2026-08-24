@@ -28,13 +28,13 @@ export default function OpengraphImage() {
         />
         <div
           style={{
-            fontSize: 90,
+            fontSize: 72,
             fontWeight: 700,
             color: "#e7e9ee",
             letterSpacing: -2,
           }}
         >
-          ReferHub
+          Referralbot.online
         </div>
         <div
           style={{

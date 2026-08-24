@@ -2,8 +2,8 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "ReferHub",
-    short_name: "ReferHub",
+    name: "Referralbot.online",
+    short_name: "Referralbot",
     description: "Share and discover referral links across crypto exchanges, shopping apps, and more.",
     start_url: "/",
     display: "standalone",

@@ -1,4 +1,4 @@
-# ReferHub
+# Referralbot.online
 
 A webapp for users to share and browse referral links for crypto exchanges, shopping apps, and other services. **No login** — pick a nickname, share links, comment. Everything is public.
 

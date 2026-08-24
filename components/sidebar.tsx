@@ -91,7 +91,7 @@ export default function Sidebar() {
 
   return (
     <nav className="sidebar">
-      <Link href="/" className="sidebar-logo" aria-label="ReferHub home">
+      <Link href="/" className="sidebar-logo" aria-label="Referralbot.online home">
         <LottieAvatar src="/logo-animation.json" className="sidebar-logo-mark" />
       </Link>
 
