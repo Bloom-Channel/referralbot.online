@@ -133,6 +133,7 @@ insert into public.platforms (name, category, sort_order, logo_url) values
   ('Instagram', 'other', 23, '/logos/instagram.jpg'),
   ('PayPal', 'other', 24, '/logos/paypal.jpg'),
   ('Tesla', 'other', 26, '/logos/tesla.jpg'),
+  ('FA', 'other', 27, '/logos/postee.jpg'),
   ('Hostinger', 'hosting', 30, '/logos/hostinger.png'),
   ('Google Workspace', 'hosting', 31, '/logos/googleworkspace.png'),
   ('Brave Browser', 'web3', 40, '/logos/brave.jpg'),
