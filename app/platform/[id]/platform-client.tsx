@@ -45,6 +45,7 @@ export default function PlatformClient({ platform, links, comments, myLink, user
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [showAuth, setShowAuth] = useState(false);
   const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
+  const [saveError, setSaveError] = useState("");
   const [sortKey, setSortKey] = useState<SortKey | null>(null);
   const [sortDir, setSortDir] = useState<SortDir>("asc");
 
@@ -108,11 +109,27 @@ export default function PlatformClient({ platform, links, comments, myLink, user
       setShowAuth(true);
       return;
     }
+    setSaveError("");
+    const trimmed = linkValue.trim();
+
+    const { data: duplicates } = await supabase
+      .from("referral_links")
+      .select("id, platform_id, platforms(name)")
+      .eq("user_id", userId)
+      .eq("link", trimmed)
+      .neq("platform_id", platform.id);
+
+    if (duplicates && duplicates.length > 0) {
+      const otherPlatform = (duplicates[0] as any).platforms?.name ?? "another platform";
+      setSaveError(`You've already posted this exact link under ${otherPlatform}. Use a different link for each platform.`);
+      return;
+    }
+
     setSaving(true);
     await supabase
       .from("referral_links")
       .upsert(
-        { user_id: userId, platform_id: platform.id, link: linkValue, updated_at: new Date().toISOString() },
+        { user_id: userId, platform_id: platform.id, link: trimmed, updated_at: new Date().toISOString() },
         { onConflict: "user_id,platform_id" }
       );
     setSaving(false);
@@ -172,7 +189,10 @@ export default function PlatformClient({ platform, links, comments, myLink, user
             type="url"
             placeholder="https://…"
             value={linkValue}
-            onChange={(e) => setLinkValue(e.target.value)}
+            onChange={(e) => {
+              setLinkValue(e.target.value);
+              setSaveError("");
+            }}
             required
           />
           <button type="submit" disabled={saving}>
@@ -180,6 +200,7 @@ export default function PlatformClient({ platform, links, comments, myLink, user
           </button>
         </form>
         {!userId && <p className="hint">Saving will ask you to sign in or pick a guest nickname first.</p>}
+        {saveError && <p className="error">{saveError}</p>}
       </section>
 
       <section className="all-links">
