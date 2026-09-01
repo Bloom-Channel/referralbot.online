@@ -96,6 +96,7 @@ a { color: var(--teal); }
 }
 .site-footer-links {
   display: flex;
+  align-items: center;
   gap: 1.2rem;
 }
 .site-footer-links a {
@@ -105,6 +106,10 @@ a { color: var(--teal); }
 }
 .site-footer-links a:hover {
   color: var(--text);
+}
+.site-footer-x {
+  display: inline-flex;
+  align-items: center;
 }
 
 .about-post {
