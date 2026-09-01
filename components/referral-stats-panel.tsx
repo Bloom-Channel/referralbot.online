@@ -45,7 +45,7 @@ export default function ReferralStatsPanel({
       <DoughnutChart
         segments={countSegments}
         centerValue={String(totalLinks)}
-        centerLabel={totalLinks === 1 ? "Referral" : "Referrals"}
+        centerLabel={totalLinks === 1 ? "New Referral" : "New Referrals"}
       />
       <DoughnutChart
         segments={valueSegments}
