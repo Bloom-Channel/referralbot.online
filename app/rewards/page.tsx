@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Rewards",
+  robots: { index: false, follow: false },
+};
+
 export default function RewardsPage() {
   return (
     <main>

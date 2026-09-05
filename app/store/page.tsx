@@ -1,3 +1,8 @@
+export const metadata = {
+  title: "Store",
+  robots: { index: false, follow: false },
+};
+
 export default function StorePage() {
   return (
     <main>
