@@ -119,6 +119,20 @@ a { color: var(--teal); }
   margin-bottom: 1rem;
 }
 
+.legal-page {
+  max-width: 720px;
+}
+.legal-page section {
+  margin-bottom: 1.75rem;
+}
+.legal-page p {
+  margin-bottom: 0.8rem;
+}
+.legal-updated {
+  font-size: 0.85rem;
+  margin-top: -0.5rem;
+}
+
 .sidebar {
   flex-shrink: 0;
   width: 68px;

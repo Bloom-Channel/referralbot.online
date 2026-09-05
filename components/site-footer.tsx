@@ -7,6 +7,9 @@ export default function SiteFooter() {
         <span className="site-footer-copy">© {new Date().getFullYear()} Referralbot.online</span>
         <nav className="site-footer-links">
           <Link href="/about">About Us</Link>
+          <Link href="/contact">Contact</Link>
+          <Link href="/privacy">Privacy</Link>
+          <Link href="/terms">Terms</Link>
           <a
             href="https://x.com/ReferralsWeb"
             target="_blank"
