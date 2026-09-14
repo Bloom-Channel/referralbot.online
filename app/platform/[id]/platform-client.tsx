@@ -162,6 +162,8 @@ export default function PlatformClient({ platform, links, comments, myLink, user
         <h1>{platform?.name}</h1>
       </div>
 
+      {platform?.description && <p className="platform-description">{platform.description}</p>}
+
       {(platform?.signup_url || platform?.referral_info_url) && (
         <div className="platform-links-row">
           {platform?.signup_url && (

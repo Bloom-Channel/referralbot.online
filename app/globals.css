@@ -966,6 +966,13 @@ button:disabled { opacity: 0.5; cursor: default; }
 }
 .platform-page h1 { margin: 0; }
 
+.platform-description {
+  color: var(--muted, #9a9a9a);
+  line-height: 1.55;
+  max-width: 62ch;
+  margin: -0.8rem 0 1.6rem;
+}
+
 .platform-links-row {
   display: flex;
   gap: 0.7rem;

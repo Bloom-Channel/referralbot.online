@@ -20,7 +20,7 @@ export default function PlatformPage() {
   const fetchData = useCallback(async () => {
     const { data: platformData } = await supabase
       .from("platforms")
-      .select("*")
+      .select("id, name, category, logo_url, value_per_referral, signup_url, referral_info_url, description")
       .eq("id", platformId)
       .single();
 
