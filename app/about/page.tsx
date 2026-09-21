@@ -11,7 +11,7 @@ export default function AboutPage() {
       <section className="about-post">
         <h2>Hello World</h2>
         <p>
-          Hi, I'm the person behind Referralbot.online. I built this site because every time I went looking
+          I built this site because every time I went looking
           for a referral link — for an exchange, a shopping app, a hosting plan — I'd end up
           wading through forum posts and expired codes, never quite sure if the numbers being
           promised were real. So I started keeping my own list, and eventually decided it was
