@@ -94,7 +94,7 @@ export default function RecentActivity() {
         <ul className="activity-feed-list activity-feed-scroll">
           {scrolling.map((e, i) => (
             <li key={`${e.id}-${i}`} className="activity-feed-item">
-              <span className="activity-feed-dot" />
+              <span className={`activity-feed-dot${i % events.length === 0 ? " activity-feed-dot-latest" : ""}`} />
               <span className="activity-feed-text">{e.text}</span>
             </li>
           ))}

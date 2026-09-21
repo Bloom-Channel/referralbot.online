@@ -762,6 +762,9 @@ button:disabled { opacity: 0.5; cursor: default; }
   background: var(--accent);
   flex-shrink: 0;
 }
+.activity-feed-dot-latest {
+  background: #f2b705;
+}
 .activity-feed-text {
   color: var(--text);
   font-size: 0.88rem;
