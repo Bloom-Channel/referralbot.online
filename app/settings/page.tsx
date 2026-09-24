@@ -197,7 +197,7 @@ export default function SettingsPage() {
     return (
       <main>
         <h1>Settings</h1>
-        <p>Sign in or continue as a guest to manage your settings.</p>
+        <p>Sign in to manage your settings.</p>
         <button type="button" className="signin-btn" onClick={() => setShowAuth(true)}>
           Sign in
         </button>

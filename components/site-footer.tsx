@@ -23,6 +23,9 @@ export default function SiteFooter() {
           </a>
         </nav>
       </div>
+      <div className="site-footer-donate">
+        Support this project: ETH 0xa2C0d067f1425042C639e9af64dc865815dDAF6E
+      </div>
     </footer>
   );
 }

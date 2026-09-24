@@ -111,6 +111,15 @@ a { color: var(--teal); }
   display: inline-flex;
   align-items: center;
 }
+.site-footer-donate {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 1.5rem 1.2rem;
+  color: var(--text-dim);
+  font-size: 0.7rem;
+  font-family: 'JetBrains Mono', monospace;
+  word-break: break-all;
+}
 
 .about-post {
   max-width: 640px;
