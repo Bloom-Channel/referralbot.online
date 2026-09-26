@@ -20,6 +20,17 @@ export default function TermsPage() {
       </section>
 
       <section>
+        <h2>No official affiliation</h2>
+        <p>
+          Referralbot.online is not officially affiliated with, endorsed by, or acting on behalf of
+          any exchange, app, or platform listed on this site. Brand names, logos, and program names
+          belong to their respective owners and are used only to identify the referral programs
+          being discussed. This is a purely community-driven site: every referral link is posted
+          voluntarily by an individual user promoting their own referral link, not by us.
+        </p>
+      </section>
+
+      <section>
         <h2>Referral values aren't guaranteed by us</h2>
         <p>
           Where a dollar value is shown next to a platform, it's sourced from that platform's own
