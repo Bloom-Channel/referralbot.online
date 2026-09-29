@@ -28,7 +28,7 @@ export async function GET(request: Request) {
     (forwardedHost && ALLOWED_HOSTS.includes(forwardedHost) ? `${forwardedProto}://${forwardedHost}` : origin);
 
   // /onboarding checks (client-side) whether this auth user already has
-  // a linked profile — if so it sets local identity and forwards to
-  // /dashboard itself; if not, it asks for a nickname.
+  // a linked profile — if so it sets local identity and forwards home
+  // itself; if not, it asks for a nickname.
   return NextResponse.redirect(`${base}/onboarding`);
 }

@@ -34,7 +34,7 @@ export default function Onboarding() {
 
       if (existing) {
         setLocalIdentity(existing.id, existing.nickname, existing.avatar_url);
-        router.replace("/dashboard");
+        router.replace("/");
         return;
       }
 
@@ -106,7 +106,7 @@ export default function Onboarding() {
 
     setSaving(false);
     setLocalIdentity(profile.id, profile.nickname, avatar_url);
-    router.push("/dashboard");
+    router.push("/");
   };
 
   if (checking) return null;
