@@ -1288,6 +1288,7 @@ button:disabled { opacity: 0.5; cursor: default; }
   .dashboard {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     padding-left: 1rem;
     padding-right: 1rem;
     gap: 2rem;
@@ -1308,6 +1309,7 @@ button:disabled { opacity: 0.5; cursor: default; }
   }
 
   .trending-card { flex-basis: 170px; }
+  .trending-card-badge svg { width: 72px; height: 72px; }
 
   .featured-link-row {
     flex-wrap: wrap;
