@@ -9,6 +9,7 @@ import { checkLottieDuration, checkVideoDuration, isLottieFile } from "@/lib/ava
 import LottieAvatar from "@/components/lottie-avatar";
 import AuthModal from "@/components/auth-modal";
 import ThemeSpinner from "@/components/theme-spinner";
+import PlatformBadge from "@/components/platform-badge";
 
 function PenIcon() {
   return (
@@ -102,7 +103,7 @@ export default function SettingsPage() {
 
       const { data: historyData } = await supabase
         .from("referral_links")
-        .select("id, link, code, use_count, updated_at, platforms(name, logo_url)")
+        .select("id, link, code, use_count, updated_at, platforms(name)")
         .eq("user_id", userId)
         .order("updated_at", { ascending: false });
       setHistory(historyData ?? []);
@@ -322,7 +323,7 @@ export default function SettingsPage() {
                   <tr key={h.id}>
                     <td>
                       <div className="holder-cell">
-                        {h.platforms?.logo_url && <img src={h.platforms.logo_url} alt="" className="avatar avatar-img" />}
+                        {h.platforms?.name && <PlatformBadge name={h.platforms.name} size={26} />}
                         {h.platforms?.name}
                       </div>
                     </td>

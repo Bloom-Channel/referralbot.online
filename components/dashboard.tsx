@@ -5,6 +5,7 @@ import Link from "next/link";
 import { createClient } from "@/lib/supabase-browser";
 import ReferralStatsPanel from "./referral-stats-panel";
 import RecentActivity from "./recent-activity";
+import PlatformBadge from "./platform-badge";
 
 const CATEGORY_LABELS: Record<string, string> = {
   crypto: "Crypto Exchanges",
@@ -61,14 +62,9 @@ export default function Dashboard() {
               const count = counts.get(p.id) ?? 0;
               return (
                 <Link key={p.id} href={`/platform/${p.id}`} className="trending-card">
-                  {p.logo_url && (
-                    <img
-                      src={p.logo_url}
-                      alt=""
-                      className="trending-card-bg"
-                      onError={(e) => ((e.target as HTMLImageElement).style.display = "none")}
-                    />
-                  )}
+                  <div className="trending-card-badge">
+                    <PlatformBadge name={p.name} size={88} />
+                  </div>
                   {p.value_per_referral > 0 && <span className="card-value-badge">${p.value_per_referral}</span>}
                   <div className="trending-card-overlay">
                     <span className="trending-card-count">{count}</span>
@@ -89,14 +85,7 @@ export default function Dashboard() {
                 return (
                   <Link key={p.id} href={`/platform/${p.id}`} className="card">
                     <div className="card-header">
-                      {p.logo_url && (
-                        <img
-                          src={p.logo_url}
-                          alt=""
-                          className="card-icon"
-                          onError={(e) => ((e.target as HTMLImageElement).style.display = "none")}
-                        />
-                      )}
+                      <PlatformBadge name={p.name} size={24} className="card-icon" />
                       {p.value_per_referral > 0 && <span className="card-value-inline">${p.value_per_referral}</span>}
                     </div>
                     <h3>{p.name}</h3>

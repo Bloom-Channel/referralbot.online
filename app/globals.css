@@ -534,12 +534,7 @@ a { color: var(--teal); }
   text-align: left;
 }
 .platform-picker-item:hover { background: var(--surface-hover); box-shadow: none; }
-.platform-picker-item img {
-  width: 24px;
-  height: 24px;
-  border-radius: 6px;
-  background: #fff;
-  padding: 2px;
+.platform-picker-item svg {
   flex-shrink: 0;
 }
 
@@ -860,14 +855,12 @@ button:disabled { opacity: 0.5; cursor: default; }
   transform: translateY(-3px);
   border-color: var(--accent-dim);
 }
-.trending-card-bg {
+.trending-card-badge {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background: #fff;
-  padding: 2.5rem;
+  inset: 0 0 2.4rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .trending-card-overlay {
   position: absolute;
@@ -943,11 +936,8 @@ button:disabled { opacity: 0.5; cursor: default; }
   margin-bottom: 0.4rem;
 }
 .card-icon {
-  width: 24px;
-  height: 24px;
-  border-radius: 6px;
-  background: #fff;
-  padding: 3px;
+  flex-shrink: 0;
+  display: block;
 }
 .card-value-inline {
   font-family: 'JetBrains Mono', monospace;
@@ -978,11 +968,8 @@ button:disabled { opacity: 0.5; cursor: default; }
   margin-bottom: 1.5rem;
 }
 .platform-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  background: #fff;
-  padding: 5px;
+  flex-shrink: 0;
+  display: block;
 }
 .platform-page h1 { margin: 0; }
 

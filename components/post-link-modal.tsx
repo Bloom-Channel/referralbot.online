@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase-browser";
+import PlatformBadge from "./platform-badge";
 
 const CATEGORY_LABELS: Record<string, string> = {
   crypto: "Crypto Exchanges",
@@ -53,7 +54,7 @@ export default function PostLinkModal({ onClose }: { onClose: () => void }) {
                   className="platform-picker-item"
                   onClick={() => goToPlatform(p.id)}
                 >
-                  {p.logo_url && <img src={p.logo_url} alt="" />}
+                  <PlatformBadge name={p.name} size={24} />
                   {p.name}
                 </button>
               ))}

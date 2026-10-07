@@ -5,6 +5,7 @@ import Link from "next/link";
 import { createClient } from "@/lib/supabase-browser";
 import AuthModal from "@/components/auth-modal";
 import LottieAvatar from "@/components/lottie-avatar";
+import PlatformBadge from "@/components/platform-badge";
 import { isLottieAvatar, isVideoAvatar } from "@/lib/avatar";
 import { displayName } from "@/lib/format";
 
@@ -158,7 +159,7 @@ export default function PlatformClient({ platform, links, comments, myLink, user
   return (
     <main className="platform-page">
       <div className="platform-header">
-        {platform?.logo_url && <img src={platform.logo_url} alt="" className="platform-icon" />}
+        {platform?.name && <PlatformBadge name={platform.name} size={40} className="platform-icon" />}
         <h1>{platform?.name}</h1>
       </div>
 

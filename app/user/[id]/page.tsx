@@ -6,6 +6,7 @@ import { createClient } from "@/lib/supabase-browser";
 import { isLottieAvatar, isVideoAvatar } from "@/lib/avatar";
 import LottieAvatar from "@/components/lottie-avatar";
 import { displayName } from "@/lib/format";
+import PlatformBadge from "@/components/platform-badge";
 
 export default function UserProfilePage() {
   const params = useParams();
@@ -28,7 +29,7 @@ export default function UserProfilePage() {
         .order("position");
       const { data: historyData } = await supabase
         .from("referral_links")
-        .select("id, link, code, use_count, updated_at, platforms(name, logo_url)")
+        .select("id, link, code, use_count, updated_at, platforms(name)")
         .eq("user_id", userId)
         .order("updated_at", { ascending: false });
 
@@ -128,7 +129,7 @@ export default function UserProfilePage() {
                   <tr key={h.id}>
                     <td>
                       <div className="holder-cell">
-                        {h.platforms?.logo_url && <img src={h.platforms.logo_url} alt="" className="avatar avatar-img" />}
+                        {h.platforms?.name && <PlatformBadge name={h.platforms.name} size={26} />}
                         {h.platforms?.name}
                       </div>
                     </td>
